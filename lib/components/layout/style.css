@@ -1,0 +1,18 @@
+.md-layout {
+    display: flex;
+    flex-direction: column;
+    flex: auto;
+}
+
+.md-layout.md-layout--has-sider {
+    flex-direction: row;
+}
+
+.md-layout .md-sider, .md-layout .md-header, .md-layout .md-footer {
+    flex-shrink: 0;
+}
+
+.md-layout .md-content {
+    flex: auto;
+    overflow: auto;
+}
