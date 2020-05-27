@@ -1,19 +1,19 @@
 import React from 'react';
 
 function Sider(props) {
-    const { width = 0, } = props;
+    const { width = 0, style = {}, } = props;
 
-    const style = { width };
+    const newStyle = { ...style, width };
 
     return (
-        <aside style={style} className={'md-sider ' + props['class']}>
+        <aside style={newStyle} className={'md-sider ' + props['class']}>
             {props.children}
         </aside>
     )
 }
 
 Sider.defaultProps = {
-    width: 0,
+    width: 'auto',
     className: '',
 }
 

@@ -5,7 +5,7 @@ import RowContext from './context';
 import { genJustifyClassName, isArray } from './tool';
 
 function Row(props) {
-    const { gutter, justify, wrap } = props;
+    const { gutter, justify, wrap, style = {}, } = props;
 
     const [horizontalGutter = 0, verticalGutter = 0] = isArray(gutter) ? gutter : [gutter, 0];
 
@@ -21,10 +21,11 @@ function Row(props) {
     return (
         <RowContext.Provider value={{ horizontalGutter, verticalGutter }}>
             <div className={classNames.join(' ')} style={{
+                ...style,
                 marginLeft: `${-horizontalGutter / 2}px`,
                 marginRight: `${-horizontalGutter / 2}px`,
                 marginTop: `${-verticalGutter / 2}px`,
-                marginBottom: `${-verticalGutter / 2}px`
+                marginBottom: `${-verticalGutter / 2}px`,
             }}>
                 {props.children}
             </div>

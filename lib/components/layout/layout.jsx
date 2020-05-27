@@ -1,16 +1,18 @@
 import React from 'react';
 
 function Layout(props) {
+    const { style, hasSider } = props;
+
     const classNames = ['md-layout'];
     if (props['class']) {
         classNames.push(props['class']);
     }
-    if (props.hasSider) {
+    if (hasSider) {
         classNames.push('md-layout--has-sider');
     }
 
     return (
-        <section className={classNames.join(' ')}>
+        <section style={style} className={classNames.join(' ')}>
             {props.children}
         </section>
     );
