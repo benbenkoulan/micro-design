@@ -3,16 +3,16 @@
   "version": "1.0.0",
   "description": "",
   "main": "./dist/index.js",
-  "module": "./dist/es/index.js",
+  "module": "./es/index.js",
   "scripts": {
     "init": "esw --init",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config build/webpack.config.js",
     "lint:es": "esw lib/** --ext .jsx,.js --watch",
-    "js:es": "babel lib -d dist/es --watch --source-maps",
-    "css:es": "postcss lib/**/*.css --config postcss.config.js --base lib --dir dist/es --watch --map",
+    "js:es": "babel lib -d es --watch --source-maps",
+    "css:es": "postcss lib/**/*.css --config postcss.config.js --base lib --dir es --watch --map",
     "dev:es": "npm run js:es & npm run css:es",
-    "build:es": "babel lib -d dist/es --source-maps & postcss lib/**/*.css --config postcss.config.js --base lib --dir dist/es --map"
+    "build:es": "babel lib -d es --source-maps & postcss lib/**/*.css --config postcss.config.js --base lib --dir es --map"
   },
   "author": "benli",
   "license": "ISC",
@@ -31,6 +31,7 @@
     "eslint-watch": "^6.0.1",
     "mini-css-extract-plugin": "^0.9.0",
     "postcss-cli": "^7.1.0",
+    "postcss-import": "^12.0.1",
     "postcss-nested": "^4.2.1",
     "postcss-preset-env": "^6.7.0",
     "webpack": "^4.43.0",
